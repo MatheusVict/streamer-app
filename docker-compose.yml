@@ -26,6 +26,9 @@ services:
       POSTGRES_DB: "streamkeys"
     ports:
       - "5431:5432"
+    volumes:
+      - ./scripts/V1_init.sql:/docker-entrypoint-initdb.d/V1_init.sql
+      - ./scripts/V2_stream_keys_populate.sql:/docker-entrypoint-initdb.d/V2_stream_keys_populate.sql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 2s
