@@ -5,6 +5,7 @@ go 1.23.8
 require (
 	github.com/labstack/echo/v4 v4.13.3
 	github.com/labstack/gommon v0.4.2
+	github.com/lib/pq v1.10.9
 )
 
 require (
